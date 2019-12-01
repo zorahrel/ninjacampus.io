@@ -1,0 +1,146 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.shape {
+  height: 350px;
+  width: 350px;
+  background-color: #F2F2F2;
+  -webkit-mask-image: url(./shape_base.svg);
+  mask-image: url(./shape_base.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%; 
+  mask-size: 100% 100%; 
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: 900;
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.heading {
+  margin-bottom: 120px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1280px;
+}
+
+header {}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section {
+  min-height: 100vh;
+}
+
+span {
+  font-size: 12px;
+}
+ul {
+  margin: 12px 0 0;
+  padding: 0;
+}
+ul li {
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+section.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+section.welcome .description {
+  font-size: 28px;
+  color: #AFB1B3;
+}
+
+section.plan .wrapper{
+  position: relative;
+  z-index: 1;
+}
+section.plan {
+  color: #FFFFFF;
+  background: #000000;
+  padding: 30vh 30px;
+}
+
+section.plan p {
+  margin-bottom: 50px;
+}
+
+section.plan b {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+
+section.plan {
+  font-size: 30px;
+  position: relative;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 24px;
+  color: #000000;
+  outline: none;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cta button {
+  border: 0;
+  height: 15vh;
+  width: 30vw;
+  -webkit-mask-size: 30vw 15vh; 
+  mask-size: 30vw 15vh; 
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  cursor: pointer;
+}
+
+.cta .arrow {
+  background: url(./arrow-right.svg) no-repeat;
+  background-size: contain;
+  height: 3vh;
+  width: 3vh;
+  top: 3.5vh;
+  right: 3vh;
+  position: absolute;
+}
+
+.soul {
+  background-color: #8762D9;
+}
