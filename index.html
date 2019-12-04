@@ -158,7 +158,8 @@
       $soul = $('<div class="soul shape"></div>');
       $soul.css('position','absolute')
         .css('top', Math.floor(Math.random() * 80) + 1 + '%')
-        .css('left', Math.floor(Math.random() * 80) + 1 + '%')
+        .css('left', Math.floor(Math.random() * 70) + 5 + '%')
+        .css('transform', 'scale(' + (Math.floor(Math.random() * 80) + 25)/100 + ') rotate(' + Math.floor(Math.random() * 80) + 1 + 'deg)')
         .css('zIndex', Math.floor(Math.random() * 2) + 0);
 
       $('.plan').append($soul)
