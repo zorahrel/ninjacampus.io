@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-size: 18px;
   background-color: #000000;
+  color: #FFFFFF;
 }
 
 * {
@@ -19,6 +20,7 @@ body {
   mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%; 
   mask-size: 100% 100%; 
+  background-color: #8762D9;
 }
 
 h1 {
@@ -72,8 +74,10 @@ ul li {
 section.welcome {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 5% 0 7%;
   background: #FFFFFF;
+  color: #000000;
 }
 
 section.welcome .description {
@@ -144,5 +148,34 @@ header nav a {
 }
 
 .soul {
-  background-color: #8762D9;
+}
+
+.person {
+  height: 30vh;
+  width: 30vh;
+}
+.sensei .person {
+  padding: 0 10vh;
+  display: flex;
+  height: 40vh;
+  width: 70vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.sensei .person .shape {
+  position: absolute;
+  z-index: -1;
+  transform: scale(1.5);
+  -webkit-mask-image: url(./shape_sensei.svg);
+  mask-image: url(./shape_sensei.svg);
+  height: 100%;
+  width: 100%;
+}
+section .souls-wrapper {
+  display: flex;
+}
+.sensei .souls-wrapper {
+  justify-content: flex-end;
 }
