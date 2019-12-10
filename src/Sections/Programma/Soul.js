@@ -1,10 +1,12 @@
+import { fix } from "@pups/utility/build/Number"
+
 const SoulImage = new Image()
 
 SoulImage.src = '/assets/images/shape_base.svg'
 
 
-const SCALEIMPULSE = .8
-const DECELERATION = 70
+const SCALEIMPULSE = 0.001
+const DECELERATION = 200
 
 class Soul
 {
@@ -15,37 +17,23 @@ class Soul
         this.va = 0
         this.scale = scale
         this.rotation = rotation
-        this.vr = Math.random() > 0.5 ? 1 : -1
-        
-        this.bForce = false
+        this.randomSign = Math.random() > 0.5 ? 1 : -1
     }
 
     update()
     {
-        this.y += this.va * this.forceDirection
-        
-        this.va = Math.abs(this.va) - (((1 + this.scale) / 2) / DECELERATION)
+        const va = Math.abs(this.va) - ((2 - this.scale) / DECELERATION)
+        this.va = va > 0 ? va * Math.sign(this.va) : 0
 
-        this.rotation += (((1 - this.scale) + 1) * 2 / 100) * this.vr
-        if (this.va <= 0)
-        {
-            this.va = 0
-            this.bForce = false
-        }
+        this.y += this.va 
+        this.x += (this.va / 5) * this.randomSign
+        this.rotation += (2 - this.scale) * this.randomSign / 50
+        //this.scale += (2 - this.scale) / 10000 * this.randomSign
     }
 
-    applyForce(direction)
+    applyForce(speed)
     {
-        if (!this.bForce)
-        {
-            this.va = this.scale * SCALEIMPULSE
-            this.bForce = true
-            this.forceDirection = direction * -1
-        } 
-        else
-        {
-            this.forceDirection = direction * -1
-        }
+        this.va += SCALEIMPULSE * (speed * -1)
     }
 
     render(context, width, height)
@@ -55,6 +43,7 @@ class Soul
         context.translate(this.x, this.y)
         context.scale(this.scale, this.scale)
         context.rotate(this.rotation * Math.PI / 180)
+        context.filter = 'drop-shadow(0 0 1rem rgba(0,0,0,.1))'
     
         context.drawImage(SoulImage, -SoulImage.width/2, -SoulImage.height/2);
 

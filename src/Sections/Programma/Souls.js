@@ -1,19 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import pups from '@pups/js'
 
 import Soul from 'Sections/Programma/Soul'
-import { randomFloat } from '@pups/utility/build/Number'
 
+const getSrollSpeed = (() => {
+    var lastPos, newPos, timer, delta, delay = 50
+    const clear = () => { lastPos = null; delta = 0 }
 
-var lastScrollTop = 0
+    clear()
 
-var getScrollDIrection = function() {
-    var st = window.pageYOffset || document.documentElement.scrollTop
-    var direction = st > lastScrollTop ? 1 : -1
-    lastScrollTop = st <= 0 ? 0 : st
-    return direction
-}
+    return () => {
+        newPos = window.scrollY
+
+        if (lastPos != null) 
+        { 
+            delta = newPos - lastPos;
+        }
+
+        lastPos = newPos
+        clearTimeout(timer)
+        timer = setTimeout(clear, delay)
+        return delta
+    }
+})()
 
 class Souls extends React.PureComponent
 {
@@ -21,15 +30,31 @@ class Souls extends React.PureComponent
     {
         super(props)
 
+        this.init = this.init.bind(this)
         this.animate = this.animate.bind(this)
     }
 
     componentDidMount() 
     {
+        this.init()
+
+        window.addEventListener('scroll', () => {
+            const speed = getSrollSpeed()
+            
+            this.souls.forEach(soul => soul.applyForce(speed))
+        })
+
+        window.addEventListener('resize', this.init)
+
+        requestAnimationFrame(this.animate)
+    }
+
+    init()
+    {
         const canvas = this.refs.element
         const context = canvas.getContext('2d')
         
-        const { width, height } = canvas.getBoundingClientRect()
+        const { width, height } = canvas.parentElement.getBoundingClientRect()
 
         const devicePixelRatio = window.devicePixelRatio || 1
         const backingStoreRatio = context.webkitBackingStorePixelRatio ||
@@ -53,8 +78,6 @@ class Souls extends React.PureComponent
         this.height = height
 
         this.createSouls()
-
-        requestAnimationFrame(this.animate)
     }
 
     createSouls()
@@ -63,6 +86,7 @@ class Souls extends React.PureComponent
 
         const rw = this.width / 100
         const rh = this.height / 100
+
         this.souls.push( new Soul(5 * rh, 5 * rw, 1, 0) )
         this.souls.push( new Soul(5 * rh, 47 * rw, .25, -80) )
         this.souls.push( new Soul(85 * rh, 15 * rw, 1.2, 50) )
@@ -72,12 +96,6 @@ class Souls extends React.PureComponent
         this.souls.push( new Soul(32 * rh, 48 * rw, -.8, 120) )
         this.souls.push( new Soul(35 * rh, 25 * rw, .4, 270) )
         this.souls.push( new Soul(50 * rh, 5 * rw, -.9, 90) )
-
-
-        window.addEventListener('scroll', () => {
-            const direction = getScrollDIrection()
-            this.souls.forEach(soul => soul.applyForce(direction))
-        })
     }
 
     animate()
