@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import pups from '@pups/js'
 
-import Wrapper from 'Components/Wrapper'
-import BaseList from 'Components/BaseList'
-import Arrow from 'Components/Arrow'
+import Wrapper from 'components/wrapper'
+import BaseList from 'components/base-list'
+import Arrow from 'components/arrow'
 
 const BottomContent = () => (
     <BottomContentContainer>

@@ -3,15 +3,15 @@ import styled from 'styled-components'
 import pups from '@pups/js'
 import { map } from '@pups/utility/build/Object'
 
-import Wrapper from 'Components/Wrapper'
-import BaseList from 'Components/BaseList'
+import Wrapper from 'components/wrapper'
+import BaseList from 'components/base-list'
 
-import Liste from 'Sections/Programma/Liste'
-import Souls from 'Sections/Programma/Souls'
+import lists from 'pages/plan/lists'
+import Souls from 'pages/plan/souls'
 
 const getLists = () => 
 {
-    map(Liste, (list, name, index) => (
+    map(lists, (list, name, index) => (
         <Lista key={index}>
             <Nome>{name}</Nome>
             <BaseList>
@@ -20,14 +20,14 @@ const getLists = () =>
         </Lista>
     ))
 
-    return Object.values(Liste)
+    return Object.values(lists)
 }
 
-const Programma = () => (
+const Plan = () => (
     <Container name="plan">
         <Souls />
         <Wrapper style={{ position: 'relative', zIndex: 1 }}>
-            <Title>Programma</Title>
+            <Title>Plan</Title>
             <Subtitle>Usciamo spesso fuori programma</Subtitle>
             {getLists()}
         </Wrapper>
@@ -62,4 +62,4 @@ const Lista = styled.div`
 
 const Nome = styled.b``
 
-export default Programma
+export default Plan

@@ -5,7 +5,7 @@ import pups from '@pups/js'
 const Navigation = () => {
     return (
         <NavigationList>
-            <NavigationListItem href="#plan">Programma</NavigationListItem>
+            <NavigationListItem href="#plan">Plan</NavigationListItem>
             <NavigationListItem>Progetti</NavigationListItem>
             <NavigationListItem>Ninjas</NavigationListItem>
             <NavigationListItem>Sensei</NavigationListItem>

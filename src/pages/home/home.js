@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import pups from '@pups/js'
 
-import Wrapper from 'Components/Wrapper'
-import BaseList from 'Components/BaseList'
-import Arrow from 'Components/Arrow'
+import Wrapper from 'components/wrapper'
+import BaseList from 'components/base-list'
+import Arrow from 'components/arrow'
 
-import Header from 'Sections/Home/Header'
-import BottomContent from 'Sections/Home/BottomContent'
+import Header from 'pages/home/header'
+import BottomContent from 'pages/home/bottom-content'
 
 const Home = () => (
     <Flex>

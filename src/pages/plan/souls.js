@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import Soul from 'Sections/Programma/Soul'
+import Soul from './soul'
 
 const getSrollSpeed = (() => {
     var lastPos, newPos, timer, delta, delay = 50

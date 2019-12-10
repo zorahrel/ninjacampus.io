@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import Shell from 'UI/Shell'
+import App from 'app'
 
-render(<Shell />, document.querySelector('#app-root'))
+render(<App />, document.querySelector('#app-root'))
 

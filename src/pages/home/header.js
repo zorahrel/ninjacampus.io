@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import pups from '@pups/js'
 
-import Wrapper from 'Components/Wrapper'
-import Navigation from 'Sections/Home/Navigation'
+import Wrapper from 'components/wrapper'
+import Navigation from 'pages/home/navigation'
 
 const Header = () => {
     return (
