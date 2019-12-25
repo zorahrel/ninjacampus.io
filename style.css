@@ -149,10 +149,31 @@ header nav a {
 
 .soul {
 }
+.skew {
+  transition: all .2s;
+}
 
 .person {
   height: 30vh;
   width: 30vh;
+}
+.sensei .person.person--large .shape {
+  width: 700px;
+  height: 800px;
+}
+.person--large p {
+  font-size: 30px;
+  line-height: 1.7;
+  position: absolute;
+  top: 60%;
+  left: 10%;
+}
+.person--large h3 {
+  font-weight: 600;
+  font-size: 75px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
 .sensei .person {
   padding: 0 10vh;

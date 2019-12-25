@@ -22,7 +22,7 @@
           </nav>
         </div>
         </header>
-        <div class="description wrapper">
+        <div class="description wrapper skew">
           Campus formativo mirato alle nuove tecnologie web e mobile.
         </div>
         <div class="cta wrapper">
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="wrapper">
+      <div class="wrapper skew">
         <p>
           <b>XML</b>
           tag<br/>
@@ -151,7 +151,7 @@
       </div>
     </section>
     <section class="sensei">
-      <a name="sensei"/>
+      <a name="sensei"></a>
       <div class="heading">
         <div class="wrapper">
           <h1>Sensei</h1>
@@ -159,8 +159,8 @@
           <div class="souls-wrapper">
             <div class="person person--large">
               <div class="shape soul"></div>
-              <h3>Attilio</h3>
-              <p>
+              <h3 class="skew">Attilio</h3 class="skew">
+              <p class="skew">
                 <b>IT Manager & Ninja Developer</b><br/>
                 13 anni di attività in architettura e sviluppo
               </p>
@@ -224,6 +224,16 @@
       direction: 'alternate',
       loop: true
     });
+
+    var scrollY = 0;
+    function tick() {
+
+      setTimeout(() => requestAnimationFrame(tick), 200);
+      var diff = (scrollY - document.documentElement.scrollTop);
+      scrollY -= (scrollY - document.documentElement.scrollTop);
+      $('.skew').css('transform', 'translate3d(0, ' + -(scrollY*0.05).toFixed(2) + 'px, 0) skew(0, '+Math.max(Math.min(diff*.02, 7), -7)+'deg)');
+    }
+    tick();
     
     // anime({
     //   targets: '.soul',
