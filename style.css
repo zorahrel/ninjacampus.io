@@ -200,3 +200,49 @@ section .souls-wrapper {
 .sensei .souls-wrapper {
   justify-content: flex-end;
 }
+
+.soul {
+	-webkit-animation: vibrate 10s linear 0.1s infinite both;
+	        animation: vibrate 10s linear 0.1s infinite both;
+}
+
+@-webkit-keyframes vibrate {
+  0% {
+    translate: 0;
+  }
+  20% {
+    translate: 50px -50px;
+  }
+  40% {
+    translate: 50px 50px;
+  }
+  60% {
+    translate: -50px 50px;
+  }
+  80% {
+    translate: -50px -50px;
+  }
+  100% {
+    translate: 0;
+  }
+}
+@keyframes vibrate {
+  0% {
+    translate: 0;
+  }
+  20% {
+    translate: 50px -50px;
+  }
+  40% {
+    translate: 50px 50px;
+  }
+  60% {
+    translate: -50px 50px;
+  }
+  80% {
+    translate: -50px -50px;
+  }
+  100% {
+    translate: 0;
+  }
+}
