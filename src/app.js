@@ -1,25 +1,12 @@
 import React from 'react';
-import { Header, Logo, HeaderWrapper, WelcomeSection, Navigation, NavigationLink, GlobalStyle, CtaWrapper } from './app.style';
+import { GlobalStyle } from './app.style';
+import WelcomeSection from './sections/welcome.section';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <WelcomeSection>
-        <Header>
-          <HeaderWrapper>
-            <Logo />
-            <Navigation>
-              <NavigationLink>Programma</NavigationLink>
-              <NavigationLink>I nostri Ninjas</NavigationLink>
-              <NavigationLink>I nostri Sensei</NavigationLink>
-            </Navigation>
-          </HeaderWrapper>
-        </Header>
-        <CtaWrapper>
-
-        </CtaWrapper>
-      </WelcomeSection>
+      <WelcomeSection/>
     </>
   );
 }
