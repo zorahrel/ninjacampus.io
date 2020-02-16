@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import logo_url from '../assets/ninjacampus_logo.svg';
+import logo_url from '../../assets/ninjacampus_logo.svg';
+import Soul from '../../components/soul/soul.components';
 
 export const Wrapper = styled.div`
   width: 90%;
@@ -26,34 +27,57 @@ export const WelcomeWrapper = styled.div`
 export const HeaderWrapper = styled(Wrapper)`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const Navigation = styled.nav`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 800px;
   flex: 1;
-  margin: auto;
 `;
 
 export const NavigationLink = styled.a`
   font-weight: 900;
-  font-size: 20px;
+  font-size: 26px;
 `;
 
-export const CtaWrapper = styled(Wrapper)`
+export const CtaWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
+`;
+
+export const WelcomeBody = styled(Wrapper)`
+  display: flex;
+  justify-content: space-between;
   flex: 1;
+  position: relative;
 `;
 
 export const H3 = styled.h3`
   font-size: 27px;
+  font-weight: 500;
 `;
 export const H1 = styled.h1`
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 27px;
+  font-size: 32px;
   margin-bottom: 25px;
+`;
+
+export const ValuesWrapper = styled.div``;
+export const ValueShape = styled(Soul)`
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
 `;
