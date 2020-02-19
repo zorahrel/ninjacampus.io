@@ -23,6 +23,7 @@ export const PlanBody = styled(Wrapper)`
 `;
 
 export const H3 = styled.h3`
+  font-weight: 400;
   font-size: 27px;
   margin-bottom: 80px;
 `;

@@ -12,9 +12,6 @@ export const SoulWrapper = styled.div`
   overflow: visible;
   height: ${p => p.size}px;
   width: ${p => p.size}px;
-  position: absolute;
-  top: 50%;
-  right: 5%;
   z-index: 0;
 `;
 
