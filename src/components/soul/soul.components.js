@@ -8,21 +8,21 @@ import SimplexNoise from 'simplex-noise';
 import paper from 'paper';
 import Util from '../../common/util.common';
 
-function Soul({children, ...props}) {
+function Soul({children, scale = 1, size = 500 * scale, ...props}) {
   const SoulRef = useRef(null);
   useEffect(() => {
     initCanvas();
-  }, []);
+  } );
   const initCanvas = () => {
     const canvas = SoulRef.current;
     paper.setup(canvas);
-    const segments = 8;
-    const radius = 100;
-    const noiseScale = Math.random() * 400 + 100; // speed
-    const noiseRange = 10; // range of distortion
+    const segments = Math.round(6 * scale) + 1;
+    const radius = size/2 * .8;
+    const noiseScale = (Math.random() * 1000 + 300) / scale; // speed
+    const noiseRange = 20; // range of distortion
 
     const polygon = new paper.Path.RegularPolygon(
-      new paper.Point(300/2, 300/2),
+      new paper.Point(size/2, size/2),
       segments,
       radius
     );
@@ -60,8 +60,8 @@ function Soul({children, ...props}) {
     };
   }
 
-  return <SoulWrapper {...props}>
-    <SoulCanvas ref={SoulRef} height={300} width={300}></SoulCanvas>
+  return <SoulWrapper size={size} {...props}>
+    <SoulCanvas ref={SoulRef} width={size} height={size}></SoulCanvas>
     {children}
   </SoulWrapper>;
 }

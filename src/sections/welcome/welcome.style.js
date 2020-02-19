@@ -78,6 +78,6 @@ export const ValueShape = styled(Soul)`
   width: 200px;
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 50%;
   transform: translateY(-50%);
 `;

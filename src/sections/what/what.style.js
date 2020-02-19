@@ -19,6 +19,7 @@ export const WhatBody = styled(Wrapper)`
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  position: relative;
 `;
 
 export const H3 = styled.h3`
