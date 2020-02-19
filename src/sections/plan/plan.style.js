@@ -31,6 +31,10 @@ export const H1 = styled.h1`
   font-size: 120px;
 `;
 
+export const B = styled.b`
+  font-size: 34px;
+  font-weight: bold;
+`;
 export const P = styled.p`
   font-size: 34px;
   line-height: 1.6;

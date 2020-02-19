@@ -1,21 +1,21 @@
 import React from 'react';
-import { PlanBody, H1, H3, P, PlanWrapper } from './plan.style';
+import { PlanBody, H1, H3, P, B, PlanWrapper } from './plan.style';
 
 export default function PlanSection() {
   return <PlanWrapper>
     <PlanBody>
       <H1>Programma</H1>
       <H3>Usciamo spesso fuori programma</H3>
+        <B>XML</B>
         <P>
-          <b>XML</b>
           tag<br/>
           attributi<br/>
           commenti<br/>
           formattazione
         </P>
 
+        <B>HTML</B>
         <P>
-          <b>HTML</b>
           head e intestazioni, metatags, doctype<br/>
           titoli, paragrafi, testi, corsivo, grassetto<br/>
           citazioni, code, sup e sub, small, time<br/>
@@ -30,8 +30,8 @@ export default function PlanSection() {
           SEO
         </P>
 
+        <B>CSS</B>
         <P>
-          <b>CSS</b>
           fogli di stile interni ed esterni, stili inline<br/>
           regole, comenti, direttive<br/>
           selettori: classi, id, attributi, stati, pseudo classi e pseudo elementi<br/>
@@ -47,8 +47,8 @@ export default function PlanSection() {
           media query
         </P>
 
+        <B>JS</B>
         <P>
-          <b>JS</b>
           file di script esterni e tag script<br/>
           variabili, costanti, dichiarazioni<br/>
           stringhe, numeri e altri tipo di dati<br/>
@@ -69,8 +69,8 @@ export default function PlanSection() {
           jQuery: querying, eventi, manipolazioni
         </P>
 
+        <B>React</B>
         <P>
-          <b>React</b>
           fondamenti component driven, vs jQuery, vs Angular<br/>
           tools sviluppo: accenni gulp, npm, npx, node, react-scripts<br/>
           JSX, map, reduce, ternary, expressions<br/>
@@ -82,8 +82,8 @@ export default function PlanSection() {
           navigazione con react router
         </P>
 
+        <B>Strumenti sviluppo</B>
         <P>
-          <b>Strumenti sviluppo</b>
           Editor<br/>
           Terminale, zsh<br/>
           ssh, deploy, continuous integration<br/>
