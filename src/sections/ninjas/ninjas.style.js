@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import React from 'react';
+import styled from 'styled-components/macro';
 import Soul from '../../components/soul/soul.components';
 import InstagramLink from '../../assets/instagram.svg';
 import GithubLink from '../../assets/github.svg';
@@ -19,17 +20,14 @@ export const NinjasWrapper = styled.div`
   padding: 14vh 4vh;
 `;
 
-export const NinjasHeader = styled(Wrapper)`
-  display: flex;
-`;
+export const NinjasHeader = styled(Wrapper)``;
 
 export const NinjasBody = styled(Wrapper)`
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
 
-    margin-top: 43px;
-    margin-left: 83px;
-    margin-right: 83px;
+  flex-wrap: wrap;
+  margin-top: 43px;
 `;
 
 export const NinjasSoul = styled(Soul)`
@@ -40,36 +38,49 @@ export const NinjasSoul = styled(Soul)`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
-  width: 200px;
+  margin: 30px 0;
 `;
 
 export const NinjaTitle = styled.h1`
-    align-self: flex-end;
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
 `;
 
 export const NinjaAvatar = styled.img`
-    align-self: flex-start;
-    border-radius: 50%;
-    width: 70%;
-    height: 70%;
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh;
 `;
 
+export const NinjaLink = ({ type, props }) => {
+  let link_img = '';
+  switch (type) {
+    case 'instagram':
+      link_img = InstagramLink;
+      break;
+    case 'github':
+      link_img = GithubLink;
+      break;
+    default:
+      break;
+  }
+  return <NinjaLinkWrapper {...props}>
+    <NinjaLinkImg src={link_img} />
+  </NinjaLinkWrapper>
+};
+
+export const NinjaLinkWrapper = styled.a`
+  margin: 0 15px;
+`;
 export const NinjaLinks = styled.div`
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 `;
 
-export const Instagram = styled.img.attrs({ src: InstagramLink })`
-    height: 50%;
-`;
-
-export const Github = styled.img.attrs({ src: GithubLink})`
-    height: 50%;
+export const NinjaLinkImg = styled.img`
+  height: 4vh;
 `;
 
 export const H3 = styled.h3`

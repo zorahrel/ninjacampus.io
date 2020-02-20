@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import logo_url from '../../assets/ninjacampus_logo.svg';
 import Soul from '../../components/soul/soul.components';
 

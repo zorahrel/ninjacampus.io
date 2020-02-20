@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const Shape = styled.div`
   background: url(${require('../../assets/shape.svg')}) no-repeat center;
