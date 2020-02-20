@@ -1,5 +1,11 @@
 import React from 'react';
-import { PlanBody, H1, H3, P, B, PlanWrapper } from './plan.style';
+import { PlanBody, PlanWrapper } from './plan.style';
+import {
+  H1,
+  H3,
+  P,
+  B,
+} from '../../common/style.common';
 
 export default function PlanSection() {
   return <PlanWrapper>

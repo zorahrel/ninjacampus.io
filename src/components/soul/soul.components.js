@@ -8,7 +8,7 @@ import SimplexNoise from 'simplex-noise';
 import paper from 'paper';
 import Util from '../../common/util.common';
 
-function Soul({children, scale = 1, size = 500 * scale, ...props}) {
+function Soul({children, scale = 1, size = window.innerHeight*.5 * scale, ...props}) {
   const SoulRef = useRef(null);
   useEffect(() => {
     initCanvas();

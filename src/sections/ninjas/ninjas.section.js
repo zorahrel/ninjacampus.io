@@ -2,10 +2,6 @@ import React from 'react';
 import OussamaPic from '../../assets/Oussama.png';
 import {
   NinjasHeader,
-  H1,
-  H3,
-  P,
-  B,
   NinjasWrapper,
   NinjasBody,
   NinjasSoul,
@@ -14,6 +10,12 @@ import {
   NinjaLinks,
   NinjaLink
 } from './ninjas.style';
+import {
+  H1,
+  H3,
+  P,
+  B,
+} from '../../common/style.common';
 
 const ninjasSouls = [
   {

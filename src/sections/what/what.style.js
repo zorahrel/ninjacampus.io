@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { SectionWrapper } from '../../common/style.common';
 
 export const Wrapper = styled.div`
   width: 90%;
@@ -6,13 +7,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
-export const WhatWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 14vh 4vh;
-`;
+export const WhatWrapper = styled(SectionWrapper)``;
 
 export const WhatBody = styled(Wrapper)`
   display: flex;

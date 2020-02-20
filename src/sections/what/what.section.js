@@ -1,5 +1,11 @@
 import React from 'react';
-import { WhatBody, H1, H3, P, WhatWrapper } from './what.style';
+import { WhatBody, WhatWrapper } from './what.style';
+import {
+  H1,
+  H3,
+  P,
+  B,
+} from '../../common/style.common';
 
 export default function WhatSection() {
   return <WhatWrapper>
