@@ -18,21 +18,21 @@ import { useWindowResize, useMediaQuery } from 'beautiful-react-hooks';
 export default function WelcomeSection() {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
-
+  const isTablet = useMediaQuery('(max-width: 480px)');
   const values = [
     {
-      top: useMediaQuery('(max-width: 480px)') ? '30%' : '25%',
-      right: useMediaQuery('(max-width: 480px)') ? '0%' : '15%',
+      top: isTablet ? '30%' : '25%',
+      right: isTablet ? '0%' : '15%',
       label: 'Mindset'
     },
     {
-      top: useMediaQuery('(max-width: 480px)') ? '40%' : '55%',
-      right: useMediaQuery('(max-width: 480px)') ? '50%' : '0',
+      top: isTablet ? '40%' : '55%',
+      right: isTablet ? '50%' : '0',
       label: 'Flow'
     },
     {
-      top: useMediaQuery('(max-width: 480px)') ? '82%' : '70%',
-      right: useMediaQuery('(max-width: 480px)') ? '20%' : '20%',
+      top: isTablet ? '82%' : '70%',
+      right: isTablet ? '20%' : '20%',
       label: 'Skills'
     }
   ]

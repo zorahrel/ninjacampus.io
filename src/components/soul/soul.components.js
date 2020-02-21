@@ -8,7 +8,7 @@ import SimplexNoise from 'simplex-noise';
 import paper from 'paper';
 import Util from '../../common/util.common';
 
-function Soul({children, scale = 1, size = window.innerHeight*.5 * scale, ...props}) {
+function Soul({children, color='#8762D9', scale = 1, size = window.innerHeight*.5 * scale, ...props}) {
   const SoulRef = useRef(null);
   useEffect(() => {
     initCanvas();
@@ -26,7 +26,7 @@ function Soul({children, scale = 1, size = window.innerHeight*.5 * scale, ...pro
       segments,
       radius
     );
-    polygon.fillColor = '#8762D9';
+    polygon.fillColor = color;
     polygon.smooth();
     const group = new paper.Group([polygon]);
     group.applyMatrix = false;

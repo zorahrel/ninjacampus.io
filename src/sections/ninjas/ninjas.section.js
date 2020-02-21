@@ -1,5 +1,9 @@
 import React from 'react';
-import OussamaPic from '../../assets/Oussama.png';
+import OussamaPic from '../../assets/oussama.jpg';
+import AndreaPic from '../../assets/andrea.jpg';
+import AntimoPic from '../../assets/antimo.jpg';
+import GiandoPic from '../../assets/giando.jpg';
+import MarcoPic from '../../assets/marco.jpg';
 import {
   NinjasHeader,
   NinjasWrapper,
@@ -8,7 +12,12 @@ import {
   NinjaTitle,
   NinjaAvatar,
   NinjaLinks,
-  NinjaLink
+  NinjaLink,
+  NinjasFooter,
+  TrainingSoul,
+  Cta,
+  ReadySoul,
+  Text
 } from './ninjas.style';
 import {
   H1,
@@ -30,7 +39,7 @@ const ninjasSouls = [
   },
   {
     name: 'Antimo',
-    avatar_url: OussamaPic,
+    avatar_url: AntimoPic,
     links: [
       {
         type: 'instagram',
@@ -40,7 +49,7 @@ const ninjasSouls = [
   },
   {
     name: 'Giando',
-    avatar_url: OussamaPic,
+    avatar_url: GiandoPic,
     links: [
       {
         type: 'instagram',
@@ -53,18 +62,8 @@ const ninjasSouls = [
     ]
   },
   {
-    name: 'Alessandro',
-    avatar_url: OussamaPic,
-    links: [
-      {
-        type: 'instagram',
-        href: 'https://instagram.com/instagram'
-      }
-    ]
-  },
-  {
     name: 'Andrea',
-    avatar_url: OussamaPic,
+    avatar_url: AndreaPic,
     links: [
       {
         type: 'instagram',
@@ -74,7 +73,7 @@ const ninjasSouls = [
   },
   {
     name: 'Marco',
-    avatar_url: OussamaPic,
+    avatar_url: MarcoPic,
     links: [
       {
         type: 'instagram',
@@ -88,12 +87,6 @@ const ninjasSouls = [
   }
 ];
 
-export function NinjasInfo(props) {
-  return ninjasSouls.map((ninjasSoul) =>
-    <B>{ninjasSoul.name}</B>
-  );
-}
-
 export default function NinjasSection() {
   return <NinjasWrapper>
     <NinjasHeader>
@@ -102,16 +95,24 @@ export default function NinjasSection() {
     </NinjasHeader>
     <NinjasBody>
       {ninjasSouls.map((ninja) =>
-        <NinjasSoul key={ninja.name} size={0.4*window.innerHeight}>
+        <NinjasSoul key={ninja.name} size={0.6*window.innerHeight}>
           <NinjaTitle>
-            <B>{ninja.name}</B>
+            {ninja.name}
           </NinjaTitle>
-          <NinjaAvatar src={ninja.avatar_url}></NinjaAvatar>
+          <NinjaAvatar ninja={ninja.avatar_url}></NinjaAvatar>
           { ninja.links.length && <NinjaLinks>
             {ninja.links.map(link => <NinjaLink key={link.type} href={link.href} type={link.type}/>)}
           </NinjaLinks> }
         </NinjasSoul>
       )}
+      <NinjasFooter>
+      <TrainingSoul size={0.7*window.innerWidth}>
+        <Cta>Vuoi allenarti nel nostro dojo?</Cta>
+          <ReadySoul size={0.3*window.innerWidth} color= '#FFFFFF'>
+            <Text>Sono pronto.</Text>
+          </ReadySoul>
+        </TrainingSoul>
+    </NinjasFooter>
     </NinjasBody>
   </NinjasWrapper>
 
