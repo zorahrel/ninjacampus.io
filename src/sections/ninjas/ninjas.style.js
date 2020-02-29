@@ -123,6 +123,6 @@ export const ReadySoul = styled(Soul)`
 export const Text = styled.h3`
   font-size: 25px;
   color: #8762D9;
-  align-self: flex-end;
+  text-align: center;
   font-weight: 700;
 `;

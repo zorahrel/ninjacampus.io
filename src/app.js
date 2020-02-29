@@ -4,6 +4,7 @@ import WelcomeSection from './sections/welcome/welcome.section';
 import WhatSection from './sections/what/what.section';
 import PlanSection from './sections/plan/plan.section';
 import NinjasSection from './sections/ninjas/ninjas.section';
+import SenseiSection from './sections/sensei/sensei.section';
 import Soul from './components/soul/soul.components';
 const soulsPositions = [
   [2, 5, 1, 0],
@@ -29,6 +30,7 @@ function App() {
         <WhatSection />
         <PlanSection />
         <NinjasSection />
+        <SenseiSection />
       </BlackWrapper>
     </>
   );

@@ -106,9 +106,9 @@ export default function NinjasSection() {
         </NinjasSoul>
       )}
       <NinjasFooter>
-      <TrainingSoul size={0.7*window.innerWidth}>
+      <TrainingSoul size={0.6*window.innerWidth}>
         <Cta>Vuoi allenarti nel nostro dojo?</Cta>
-          <ReadySoul size={0.3*window.innerWidth} color= '#FFFFFF'>
+          <ReadySoul size={0.2*window.innerWidth} color= '#FFFFFF'>
             <Text>Sono pronto.</Text>
           </ReadySoul>
         </TrainingSoul>
