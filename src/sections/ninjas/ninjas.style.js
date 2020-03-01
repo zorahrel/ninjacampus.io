@@ -55,8 +55,8 @@ export const NinjaAvatar = styled.div`
   background-image: url(${props => props.ninja});
   background-size: cover;
   background-position: center center;
-  height: 24vh;
-  width: 24vh;
+  height: ${p => p.size}px;
+  width: ${p => p.size}px;
   border-radius: 50%;
   border: 1px;
 `;
@@ -112,8 +112,8 @@ export const Cta = styled.h2`
 export const ReadySoul = styled(Soul)`
   color: #FFFFFF;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
   position: absolute;
   bottom: 0;
   right: 0;
