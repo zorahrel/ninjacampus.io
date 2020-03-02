@@ -8,11 +8,15 @@ import SimplexNoise from 'simplex-noise';
 import paper from 'paper';
 import Util from '../../common/util.common';
 
-function Soul({children, color='#8762D9', scale = 1, size = window.innerHeight*.5 * scale, ...props}) {
+export let stop = false;
+export const setStop = (flag) => stop = flag;
+window.set = setStop;
+
+function Soul({ children, color='#8762D9', scale = 1, size = window.innerHeight*.5 * scale, ...props }) {
   const SoulRef = useRef(null);
   useEffect(() => {
     initCanvas();
-  } );
+  });
   const initCanvas = () => {
     const canvas = SoulRef.current;
     paper.setup(canvas);
@@ -35,6 +39,8 @@ function Soul({children, color='#8762D9', scale = 1, size = window.innerHeight*.
     let bigCoordinates = [];
     
     paper.view.onFrame = event => {
+      if (props.stop || stop) return;
+  
       // first get coordinates of large circle
       if (bigCoordinates.length === 0) {
         polygon.segments.forEach((segment, i) => {
