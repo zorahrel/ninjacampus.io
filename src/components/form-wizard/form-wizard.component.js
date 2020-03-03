@@ -32,22 +32,26 @@ const props = {
 
 function FormWizard() {
   const [step, setStep] = useState(0);
+<<<<<<< HEAD
   const [animationState, setAnimationState] = useState("paused");
+=======
+  const [completed, setCompleted] = useState(false)
+>>>>>>> 08e6c8802d3762bc694aa6e521eff3a948b778dd
   const { register, handleSubmit, getValues, reset, control } = useForm();
   const onSubmit = data => console.log(data);
   
-  function handleClick(){
+  function handleClick() {
     const values = getValues();
-    if (step < 2 && values[props.questions[step].name] != '') {
+    if (step < props.questions.length -1 && values[props.questions[step].name] != '') {
       setStep(step + 1);
       setAnimationState("running");
     } else {
-      
+      setCompleted(true);
     }
-    
   }
 
   return (
+<<<<<<< HEAD
     <FormSoul stop={true} size={window.innerWidth}>
       <form onSubmit={handleSubmit(onSubmit)}>
         {(question => {
@@ -70,6 +74,21 @@ function FormWizard() {
         <FormButton size={0.12*window.innerWidth} onClick={() => handleClick()}>Continua</FormButton>
       </form>
     </FormSoul>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {completed && <QuestionTitle>Finito</QuestionTitle>}
+      {!completed && (question => {
+        return <QuestionWrapper>
+          <QuestionTitle>{question.title}</QuestionTitle>
+          <Controller
+            {...question}
+            as={<QuestionInput/>}
+            control={control}
+            defaultValue=""
+          />
+        </QuestionWrapper>
+      })(props.questions[step])}
+      <FormButton size={0.12*window.innerWidth} onClick={() => handleClick()}>Continua</FormButton>
+    </form>
   );
 }
 
