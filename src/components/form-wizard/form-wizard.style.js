@@ -34,6 +34,7 @@ export const QuestionInput = styled.input`
   padding: 10px 0;
   box-sizing: border-box;
   transition: all .2s;
+  margin-right: 25%;
   ::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
@@ -45,11 +46,23 @@ export const QuestionInput = styled.input`
   }
 `;
 
+export const FormButton = styled(Soul).attrs({color: '#FFFFFF'})`
+  color: #7252B7;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 200%;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  
+`;
+
 export const FormSoul = styled(Soul)`
   color: #FFFFFF;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
   top: 50%;
   left: 50%;
