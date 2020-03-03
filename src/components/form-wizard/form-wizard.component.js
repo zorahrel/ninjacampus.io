@@ -28,36 +28,35 @@ const props = {
 
 function FormWizard() {
   const [step, setStep] = useState(0);
+  const [completed, setCompleted] = useState(false)
   const { register, handleSubmit, getValues, reset, control } = useForm();
   const onSubmit = data => console.log(data);
   
-  function handleClick(){
+  function handleClick() {
     const values = getValues();
-    if (step < 2 && values[props.questions[step].name] != '') {
+    if (step < props.questions.length -1 && values[props.questions[step].name] != '') {
       setStep(step + 1);
-
     } else {
-      
+      setCompleted(true);
     }
-    
   }
 
   return (
-    <FormSoul stop={true} size={window.innerWidth}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {(question => {
-          return <QuestionWrapper>
-            <QuestionTitle>{question.title}</QuestionTitle>
-            <Controller
-              as = {<QuestionInput placeholder={question.placeholder} name={question.name} ref={register({ required: true })}/>}
-              name = {question.name}
-              control = {control}
-            />
-          </QuestionWrapper>
-        })(props.questions[step])}
-        <FormButton size={0.12*window.innerWidth} onClick={() => handleClick()}>Continua</FormButton>
-      </form>
-    </FormSoul>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {completed && <QuestionTitle>Finito</QuestionTitle>}
+      {!completed && (question => {
+        return <QuestionWrapper>
+          <QuestionTitle>{question.title}</QuestionTitle>
+          <Controller
+            {...question}
+            as={<QuestionInput/>}
+            control={control}
+            defaultValue=""
+          />
+        </QuestionWrapper>
+      })(props.questions[step])}
+      <FormButton size={0.12*window.innerWidth} onClick={() => handleClick()}>Continua</FormButton>
+    </form>
   );
 }
 
