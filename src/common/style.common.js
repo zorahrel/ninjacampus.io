@@ -21,6 +21,7 @@ export const B = styled.b`
   font-size: 34px;
   font-weight: bold;
 `;
+
 export const P = styled.p`
   font-size: 34px;
   line-height: 1.6;

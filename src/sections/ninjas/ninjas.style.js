@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import Soul from '../../components/soul/soul.components';
+import Soul from '../../components/soul/soul.component';
 import InstagramLink from '../../assets/instagram.svg';
 import GithubLink from '../../assets/github.svg';
 
@@ -55,8 +55,8 @@ export const NinjaAvatar = styled.div`
   background-image: url(${props => props.ninja});
   background-size: cover;
   background-position: center center;
-  height: 24vh;
-  width: 24vh;
+  height: ${p => p.size}px;
+  width: ${p => p.size}px;
   border-radius: 50%;
   border: 1px;
 `;
@@ -112,8 +112,8 @@ export const Cta = styled.h2`
 export const ReadySoul = styled(Soul)`
   color: #FFFFFF;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -123,6 +123,6 @@ export const ReadySoul = styled(Soul)`
 export const Text = styled.h3`
   font-size: 25px;
   color: #8762D9;
-  align-self: flex-end;
+  text-align: center;
   font-weight: 700;
 `;
