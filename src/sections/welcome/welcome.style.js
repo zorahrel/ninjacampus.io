@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import logo_url from '../../assets/ninjacampus_logo.svg';
-import Soul from '../../components/soul/soul.components';
+import Soul from '../../components/soul/soul.component';
 import { SectionWrapper } from '../../common/style.common';
 
 export const Wrapper = styled.div`

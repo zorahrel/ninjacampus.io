@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import Soul from '../../components/soul/soul.components';
+import Soul from '../../components/soul/soul.component';
 import InstagramLink from '../../assets/instagram.svg';
 import GithubLink from '../../assets/github.svg';
 import LinkedinLink from '../../assets/linkedin.svg';

@@ -8,7 +8,7 @@ import NinjasSection from './sections/ninjas/ninjas.section';
 import SenseiSection from './sections/sensei/sensei.section';
 
 import JoinForm from './forms/join.form';
-import Soul from './components/soul/soul.components';
+import Soul from './components/soul/soul.component';
 
 const soulsPositions = [
   [2, 5, 1, 0],
@@ -29,15 +29,15 @@ function App() {
   const [joinForm, setJoinForm] = useState(false);
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle blockScroll={joinForm} />
       <WelcomeSection />
       <BlackWrapper>
         { soulsPositions.map(s => <Soul key={s[0]+''+s[1]} scale={s[2]} style={{position: 'absolute', top: s[0]+'%', left: s[1]+'%' }}/>) }
         <WhatSection />
         <PlanSection />
-        <NinjasSection />
+        <NinjasSection showForm={() => setJoinForm(true)} />
         <SenseiSection />
-        <JoinForm opened={joinForm}/>
+        <JoinForm show={joinForm} onClose={() => setJoinForm(false)}/>
       </BlackWrapper>
     </>
   );

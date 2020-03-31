@@ -1,31 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import Soul from '../soul/soul.components';
+import Soul from '../soul/soul.component';
 
 const uiColor = '#7252B7';
 
 export const Wrapper = styled.div`
-  width: 90%;
+  width: 90vw;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  height: 100vh;
 `;
 
 export const FormTitle = styled.div`
   align-self: flex-start;
   display: flex;
   flex-direction: column;
-  margin-top: 27%;
   align-items: flex-start;
+  margin-top: 7vh;
 `;
 
-export const QuestionWrapper = styled(Wrapper)`
+export const QuestionWrapper = styled.div`
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, ${p => p.show ? '-50%' : (p.prev ? '100vh' : '-100vh')});
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(0, ${p => p.show ? '-30%' : (p.prev ? '100vh' : '-100vh')});
+  opacity: ${p => p.show ? '1' : '0'};
   transition: all .3s;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
 `;
 export const QuestionTitle = styled.label`
   font-weight: bold;
@@ -62,6 +67,7 @@ export const QuestionTextarea = styled.textarea`
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   border: 2px solid ${uiColor};
+  outline: 0;
   color: #ffffff;
   background: transparent;
   padding: 10px;
@@ -117,23 +123,30 @@ export const FormButton = styled(Soul).attrs({color: '#FFFFFF'})`
   
 `;
 
-export const FormSoul = styled(Soul)`
+export const FormWrapper = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: ${p => p.show ? '100%' : '0%'};
+  height: ${p => p.show ? '100%' : '0%'};
+  transition: all .2s;
+  background: #8762D9;
+  border-radius: ${p => p.show ? '0%' : '100%'};
+  overflow: hidden;
+`;
+
+export const FormScreenWrapper = styled.div`
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: fixed;
+  transition: all .2s;
+  width: 100vw;
 `;
 
 export const FormCompleted = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 12%;
   display: flex;
-  align-items: flex-end;
-  margin-right: 35%;
+  flex-direction: column;
+  justify-content: center;
 `;

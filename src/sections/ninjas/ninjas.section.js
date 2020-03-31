@@ -87,7 +87,7 @@ const ninjasSouls = [
   }
 ];
 
-export default function NinjasSection() {
+export default function NinjasSection(props) {
   return <NinjasWrapper>
     <NinjasHeader>
       <H1>Ninjas</H1>
@@ -108,7 +108,7 @@ export default function NinjasSection() {
       <NinjasFooter>
       <TrainingSoul size={0.6*window.innerHeight}>
         <Cta>Vuoi allenarti nel nostro dojo?</Cta>
-        <ReadySoul size={0.2*window.innerHeight} color='#FFFFFF'>
+        <ReadySoul onClick={() => props.showForm()} size={0.2*window.innerHeight} color='#FFFFFF'>
           <Text>Sono pronto.</Text>
         </ReadySoul>
       </TrainingSoul>
