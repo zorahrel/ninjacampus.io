@@ -67,6 +67,12 @@ class Util {
       ((value - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
     );
   }
+
+  static encode(data) {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
 }
 
 export default Util;

@@ -16,6 +16,7 @@ import {
   H3,
   B,
 } from '../../common/style.common';
+import Util from '../../common/util.common';
 
 function FormWizard(props) {
   const [step, setStep] = useState(0);
@@ -29,6 +30,13 @@ function FormWizard(props) {
     if (values[props.questions[step].name] && values[props.questions[step].name] != "") {
       setShowError(false);
       setStep(step + 1);
+      if (step + 1 === props.questions.length) {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: Util.encode({ "form-name": "contact", ...values })
+        });
+      }
     } else {
       setShowError(true);
     }
