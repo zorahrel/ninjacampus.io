@@ -17,4 +17,5 @@ export const BlackWrapper = styled.div`
   background: #000;
   padding: 120px 0;
   position: relative;
+  overflow: hidden;
 `;

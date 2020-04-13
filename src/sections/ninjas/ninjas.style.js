@@ -45,10 +45,14 @@ export const NinjasSoul = styled(Soul)`
 
 export const NinjaTitle = styled.h1`
   margin-left: 50%;
-  font-size: 5vh;
+  font-size: 4vh;
   font-weight: 600;
   align-self: flex-start;
   margin-bottom: 10px;
+  @media (max-width: 480px) {
+    margin-left: 0;
+    align-self: center;
+  }
 `;
 
 export const NinjaAvatar = styled.div`
@@ -106,7 +110,10 @@ export const TrainingSoul = styled(Soul)`
 export const Cta = styled.h2`
   font-size: 55px;
   text-align: center;
-  white-space: nowrap;
+  @media (max-width: 480px) {
+    font-size: 30px;
+    max-width: 100%;
+  }
 `;
 
 export const ReadySoul = styled(Soul)`
