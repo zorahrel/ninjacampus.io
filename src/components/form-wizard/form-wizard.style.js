@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Soul from '../soul/soul.component';
+import BackWhiteIcon from '../../assets/back_white.svg';
 
 const uiColor = '#7252B7';
 
@@ -150,3 +151,15 @@ export const FormCompleted = styled.div`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const BackButtonLink = styled.a`
+  text-decoration: none;
+  position: fixed;
+  left: 5vw;
+  top: 5vw;
+  cursor: pointer;
+`;
+
+export const BackButton = (props) => <BackButtonLink {...props}>
+  <img src={BackWhiteIcon} alt="back"/>
+</BackButtonLink>;

@@ -8,6 +8,7 @@ import {
   FormButton,
   FormScreenWrapper,
   FormCompleted,
+  BackButton,
   Wrapper
 } from './form-wizard.style';
 import Animate, { Bounce } from 'animate-css-styled-components';
@@ -45,6 +46,7 @@ function FormWizard(props) {
   return (
     <FormScreenWrapper>
       <Wrapper>
+        <BackButton onClick={() => props.onClose()}/>
         <FormTitle>
           <H1>Unisciti al dojo</H1>
           <H3>Candidati per i corsi</H3>
