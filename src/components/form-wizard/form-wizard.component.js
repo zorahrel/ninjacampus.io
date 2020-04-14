@@ -28,7 +28,7 @@ function FormWizard(props) {
    
   function handleNext() {
     const values = getValues();
-    if (values[props.questions[step].name] && values[props.questions[step].name] != "") {
+    if (values[props.questions[step].name]) {
       setShowError(false);
       setStep(step + 1);
       if (step + 1 === props.questions.length) {

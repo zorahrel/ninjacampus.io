@@ -22,8 +22,6 @@ import {
 import {
   H1,
   H3,
-  P,
-  B,
 } from '../../common/style.common';
 
 const ninjasSouls = [
@@ -115,5 +113,4 @@ export default function NinjasSection(props) {
     </NinjasFooter>
     </NinjasBody>
   </NinjasWrapper>
-
 };

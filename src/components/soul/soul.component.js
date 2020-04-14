@@ -17,10 +17,10 @@ function Soul({ children, color='#8762D9', scale, size, ...props }) {
   scale = scale || 1
   size = scale * window.innerHeight*.5;
 
-  console.log(scale);
   useEffect(() => {
     initCanvas();
   }, []);
+
   const initCanvas = () => {
     const canvas = SoulRef.current;
     paper.setup(canvas);
