@@ -73,8 +73,8 @@ export const SenseiDescription = styled.p`
 
 export const SenseiAvatar = styled.img`
   border-radius: 100%;
-  height: ${p => p.size}px;
-  width: ${p => p.size}px;
+  height: ${p => p.scale * window.innerHeight * .5}px;
+  width: ${p => p.scale * window.innerHeight * .5}px;
 `;
 
 export const SenseiLink = styled.div`

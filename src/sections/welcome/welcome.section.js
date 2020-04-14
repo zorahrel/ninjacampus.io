@@ -13,11 +13,9 @@ import {
   ValueShape,
   WelcomeBody
 } from './welcome.style';
-import { useWindowResize, useMediaQuery } from 'beautiful-react-hooks';
+import { useMediaQuery } from 'beautiful-react-hooks';
 
 export default function WelcomeSection() {
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
   const isTablet = useMediaQuery('(max-width: 480px)');
   const values = [
     {
@@ -62,7 +60,7 @@ export default function WelcomeSection() {
         { values.map(e =>
           <ValueShape
             key={e.label}
-            size={.25*height}
+            scale={.45}
             style={{top: e.top, right: e.right}}>
             {e.label}
           </ValueShape>

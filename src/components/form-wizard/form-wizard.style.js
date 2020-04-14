@@ -18,7 +18,7 @@ export const FormTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 7vh;
+  margin-top: 10vh;
 `;
 
 export const QuestionWrapper = styled.div`
@@ -32,11 +32,16 @@ export const QuestionWrapper = styled.div`
   top: 50%;
   left: 0;
   width: 100%;
+  @media (max-width: 480px) {
+    display: block;
+  }
 `;
 export const QuestionTitle = styled.label`
   font-weight: bold;
   color: #ffffff;
   font-size: 28px;
+  margin-bottom: 20px;
+  display: block;
 `;
 export const QuestionInput = styled.input`
   font-weight: 900;
@@ -59,6 +64,10 @@ export const QuestionInput = styled.input`
   :focus {
     padding-bottom: 6px;
     border-bottom-width: 6px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30px;
   }
 `;
 
@@ -121,7 +130,11 @@ export const FormButton = styled(Soul).attrs({color: '#FFFFFF'})`
   font-size: 30px;
   font-weight: 600;
   cursor: pointer;
-  
+  @media (max-width: 480px) {
+    align-self: center;
+    margin: 5vh auto;
+    font-size: 25px;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -156,8 +169,12 @@ export const BackButtonLink = styled.a`
   text-decoration: none;
   position: fixed;
   left: 5vw;
-  top: 5vw;
+  top: 11vw;
   cursor: pointer;
+  z-index: 10;
+  @media (max-width: 480px) {
+    top: 5vw;
+  }
 `;
 
 export const BackButton = (props) => <BackButtonLink {...props}>

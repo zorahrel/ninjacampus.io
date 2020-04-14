@@ -95,20 +95,20 @@ export default function NinjasSection(props) {
     </NinjasHeader>
     <NinjasBody>
       {ninjasSouls.map((ninja) =>
-        <NinjasSoul key={ninja.name} size={0.45*window.innerHeight}>
+        <NinjasSoul key={ninja.name} scale={.8}>
           <NinjaTitle>
             {ninja.name}
           </NinjaTitle>
-          <NinjaAvatar ninja={ninja.avatar_url} size={0.2*window.innerHeight}></NinjaAvatar>
+          <NinjaAvatar ninja={ninja.avatar_url} scale={.4}></NinjaAvatar>
           { ninja.links.length && <NinjaLinks>
             {ninja.links.map(link => <NinjaLink key={link.type} href={link.href} type={link.type}/>)}
           </NinjaLinks> }
         </NinjasSoul>
       )}
       <NinjasFooter>
-      <TrainingSoul size={0.6*window.innerHeight}>
+      <TrainingSoul scale={1.4}>
         <Cta>Vuoi allenarti nel nostro dojo?</Cta>
-        <ReadySoul onClick={() => props.showForm()} size={0.2*window.innerHeight} color='#FFFFFF'>
+        <ReadySoul onClick={() => props.showForm()} scale={.45} color='#FFFFFF'>
           <Text>Sono pronto.</Text>
         </ReadySoul>
       </TrainingSoul>

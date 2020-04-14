@@ -12,8 +12,12 @@ export let stop = false;
 export const setStop = (flag) => stop = flag;
 window.set = setStop;
 
-function Soul({ children, color='#8762D9', scale = 1, size = window.innerHeight*.5 * scale, ...props }) {
+function Soul({ children, color='#8762D9', scale, size, ...props }) {
   const SoulRef = useRef(null);
+  scale = scale || 1
+  size = scale * window.innerHeight*.5;
+
+  console.log(scale);
   useEffect(() => {
     initCanvas();
   }, []);
@@ -22,8 +26,8 @@ function Soul({ children, color='#8762D9', scale = 1, size = window.innerHeight*
     paper.setup(canvas);
     const segments = Math.round(6 * scale) + 1;
     const radius = size/2 * .8;
-    const noiseScale = (Math.random() * 1000 + 300) / scale; // speed
-    const noiseRange = 20; // range of distortion
+    const noiseScale = (Math.random() * 1000 + 300) ^ scale; // speed
+    const noiseRange = 20 * 1^(size/100); // range of distortion
 
     const polygon = new paper.Path.RegularPolygon(
       new paper.Point(size/2, size/2),

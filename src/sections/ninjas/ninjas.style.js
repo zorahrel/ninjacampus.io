@@ -59,10 +59,9 @@ export const NinjaAvatar = styled.div`
   background-image: url(${props => props.ninja});
   background-size: cover;
   background-position: center center;
-  height: ${p => p.size}px;
-  width: ${p => p.size}px;
+  height: ${p => p.scale * window.innerHeight * .5}px;
+  width: ${p => p.scale * window.innerHeight * .5}px;
   border-radius: 50%;
-  border: 1px;
 `;
 
 export const NinjaLink = ({ type, props }) => {
@@ -83,11 +82,12 @@ export const NinjaLink = ({ type, props }) => {
 };
 
 export const NinjaLinkWrapper = styled.a`
-  margin: 0 15px;
+  margin-right: 30px;
 `;
 export const NinjaLinks = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 `;
 

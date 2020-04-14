@@ -25,7 +25,7 @@ function FormWizard(props) {
   const { handleSubmit, getValues, reset, control } = useForm();
   const onSubmit = data => console.log(data);
   const completed = step === props.questions.length;
-  
+   
   function handleNext() {
     const values = getValues();
     if (values[props.questions[step].name] && values[props.questions[step].name] != "") {
@@ -65,7 +65,7 @@ function FormWizard(props) {
                   defaultValue=""
                   rules={{ required: true }} />
               </div>
-              <FormButton size={0.12*window.innerWidth} onClick={() => handleNext()}>Continua</FormButton>
+              <FormButton scale={0.45} onClick={() => handleNext()}>Continua</FormButton>
             </QuestionWrapper>
           })}
           <QuestionWrapper show={completed}>
@@ -73,7 +73,7 @@ function FormWizard(props) {
               <B>Grazie per la candidatura!</B>
               <small>Ti informeremo dell’esito in 2 giorni lavorativi</small>
             </FormCompleted>
-            <FormButton size={0.12*window.innerWidth} onClick={() => props.onClose()}>Torna al sito</FormButton>
+            <FormButton scale={0.45} onClick={() => props.onClose()}>Torna al sito</FormButton>
           </QuestionWrapper>
         </form>
       </Wrapper>

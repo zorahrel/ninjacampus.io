@@ -27,18 +27,18 @@ export default function SenseiSection() {
       <H3>I nostri trainer</H3>
     </SenseiTitle>
     <SenseiBody>
-      <SenseiSoul size={0.6 * window.innerHeight}>
+      <SenseiSoul scale={1.5}>
         <SenseiName>Attilio</SenseiName>
-        <SenseiAvatar src={attilio} size={0.2*window.innerHeight}></SenseiAvatar>
         <SenseiSoulBody>
           <SenseiSubTitle>IT Manager &amp; Ninja Developer</SenseiSubTitle>
           <SenseiDescription>13 anni di attività in architettura e sviluppo</SenseiDescription>
-          <NinjaLinks>
-            {/* <NinjaLink href='https://www.linkedin.com/in/zorahrel/' type='linkedin'/> */}
-            <NinjaLink href='https://github.com/zorahrel/' type='github'/>
-            <NinjaLink href='https://instagram.com/zorahrel/' type='instagram'/>
-          </NinjaLinks>
         </SenseiSoulBody>
+        <NinjaLinks>
+          {/* <NinjaLink href='https://www.linkedin.com/in/zorahrel/' type='linkedin'/> */}
+          <NinjaLink href='https://github.com/zorahrel/' type='github'/>
+          <NinjaLink href='https://instagram.com/zorahrel/' type='instagram'/>
+          <SenseiAvatar src={attilio} scale={.45}></SenseiAvatar>
+        </NinjaLinks>
       </SenseiSoul>
     </SenseiBody>
   </SenseiWrapper>
