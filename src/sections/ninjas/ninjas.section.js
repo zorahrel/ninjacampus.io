@@ -106,7 +106,7 @@ export default function NinjasSection(props) {
       <NinjasFooter>
       <TrainingSoul scale={1.4}>
         <Cta>Vuoi allenarti nel nostro dojo?</Cta>
-        <ReadySoul onClick={() => props.showForm()} scale={.45} color='#FFFFFF'>
+        <ReadySoul onClick={() => props.showForm()} scale={.6} color='#FFFFFF'>
           <Text>Sono pronto.</Text>
         </ReadySoul>
       </TrainingSoul>

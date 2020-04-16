@@ -125,6 +125,9 @@ export const ReadySoul = styled(Soul)`
   bottom: 0;
   right: 0;
   cursor: pointer;
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
 `;
 
 export const Text = styled.h3`

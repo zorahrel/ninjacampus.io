@@ -19,6 +19,9 @@ export const FormTitle = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-top: 10vh;
+  @media screen and (max-height: 600px) {
+    display: none;
+  }
 `;
 
 export const QuestionWrapper = styled.div`
@@ -56,6 +59,7 @@ export const QuestionInput = styled.input`
   box-sizing: border-box;
   transition: all .2s;
   margin-right: 25%;
+  max-width: 100%;
   ::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
@@ -86,6 +90,7 @@ export const QuestionTextarea = styled.textarea`
   margin-right: 25%;
   width: 800px;
   height: 180px;
+  max-width: 100%;
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -139,14 +144,15 @@ export const FormButton = styled(Soul).attrs({color: '#FFFFFF'})`
 
 export const FormWrapper = styled.div`
   position: fixed;
-  top: 50%;
   left: 50%;
+  top: ${p => p.show ? '50%' : '-50%'};
   transform: translate(-50%, -50%);
   width: ${p => p.show ? '100%' : '0%'};
   height: ${p => p.show ? '100%' : '0%'};
-  transition: all .2s;
+  transition: all .2s ease-in-out;
   background: #8762D9;
-  border-radius: ${p => p.show ? '0%' : '100%'};
+  border-radius: ${p => p.show ? '0%' : '500px'};
+  opacity: ${p => p.show ? 1 : .5};
   overflow: hidden;
 `;
 

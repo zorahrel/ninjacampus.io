@@ -20,12 +20,12 @@ export default function WelcomeSection() {
   const values = [
     {
       top: isTablet ? '30%' : '25%',
-      right: isTablet ? '0%' : '15%',
+      right: isTablet ? '-10%' : '15%',
       label: 'Mindset'
     },
     {
       top: isTablet ? '40%' : '55%',
-      right: isTablet ? '50%' : '0',
+      right: isTablet ? '45%' : '0%',
       label: 'Flow'
     },
     {
@@ -60,7 +60,7 @@ export default function WelcomeSection() {
         { values.map(e =>
           <ValueShape
             key={e.label}
-            scale={.45}
+            scale={.5}
             style={{top: e.top, right: e.right}}>
             {e.label}
           </ValueShape>
